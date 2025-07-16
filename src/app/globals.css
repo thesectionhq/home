@@ -1,0 +1,108 @@
+@import "https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap";
+@import "tailwindcss";
+
+:root {
+  --background: #0E0E0E;
+  --foreground: #171717;
+}
+
+/* In your global CSS (e.g., globals.css or a new utilities file) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme {
+  --font-primary: 'Special Gothic Expanded One', sans-serif;
+  --font-primary-light: 'Special Gothic Expanded One', sans-serif;
+  --font-secondary: 'Inter Tight', sans-serif;
+  --color-gray-1: #cfcfcf;
+  --color-gray-2: #a0a0a0;
+  --color-gray-3: #707070;
+  --color-gray-4: #414141;
+}
+
+body{
+  /* background: #f8f8f8; */
+  background: #fff;
+  font-family: var(--font-primary);
+}
+
+/* body, html {
+  cursor: none;
+} */
+
+/* p, h1, h2, h3, h4, h5, h6, a, span {
+  font-family: var(--font-mtvgravity);
+} */
+
+a, button {
+  cursor: pointer;
+}
+
+.content {
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-bold);
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  a {
+    text-decoration: underline;
+    font-weight: var(--font-weight-bold);
+  }
+
+  p {
+    color: var(--color-gray-3);
+    font-size: var(--text-sm);
+  }
+
+  strong {
+    color: #000;
+  }
+
+  img {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  blockquote {
+    margin-block: 30px;
+    text-align: center;
+
+    p {
+      color: var(--color-gray-4);
+      font-size: var(--text-4xl);
+      line-height: var(--leading-normal);
+      font-weight: var(--font-weight-bold);
+      text-transform: uppercase;
+    }
+  }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 500000ms linear infinite;
+}
+
+
+
+
