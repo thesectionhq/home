@@ -8,7 +8,7 @@ export default async function Single() {
       <div className="container mx-auto w-full flex flex-col md:flex-row md:gap-4 items-center justify-between p-4 py-8 md:px-8">
 
         <div className="md:w-1/2 w-full h-[500px]  flex  justify-center">
-          <iframe data-testid="embed-iframe" style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/playlist/78v0OtZnmin00wYBGTjMWW?utm_source=generator&theme=0" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe data-testid="embed-iframe" style={{ borderRadius: 12 }} src="https://open.spotify.com/embed/playlist/78v0OtZnmin00wYBGTjMWW?utm_source=generator&theme=0" width="100%" height="100%" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div className="md:w-1/2 w-full md:border-l ">

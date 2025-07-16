@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
-import Head from 'next/head';
 import "./globals.css";
 import Navbar from "@/components/global/navbar";
 import Footer from "@/components/footer";
 import { Providers } from "./providers";
-import CustomCursor from "@/components/custom-cursor";
 import Subscribe from "@/components/subscribe";
 import AllSections from "./_components/all-sections";
-// import LenisProvider from "@/utils/lenis";
-
-// const fonts = [
-//   'Dancing+Script', 'Bebas+Neue', 'Indie+Flower', 'Pacifico', 'Lobster',
-//   'Merriweather', 'Raleway', 'Playfair+Display', 'Shadows+Into+Light',
-//   'Oswald', 'Baloo+2', 'Ubuntu', 'Comfortaa', 'Titillium+Web',
-//   'Vollkorn', 'Rubik', 'Fira+Sans', 'Work+Sans', 'Noto+Serif', 'Roboto'
-// ];
-// const fontLinks = fonts.map(f => `https://fonts.googleapis.com/css2?family=${f.replace(/ /g, '+')}&display=swap`).join('&');
 
 export const metadata: Metadata = {
   title: "SECTION STUDIO | Music • Art • Fashion • Film • Travel",
@@ -68,7 +56,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased">
-        {/* <CustomCursor /> */}
         <Providers>
           <Navbar />
           {children}
