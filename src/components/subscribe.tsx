@@ -28,7 +28,7 @@ export default function Subscribe() {
   };
 
   return (
-    <div className='bg-gray-100 py-10 md:py-20 px-5 md:px-40 mt-10'>
+    <div className='bg-gray-100 py-10 md:py-20 px-5 md:px-40'>
       <label htmlFor="subscribe-email" className='text-xs md:text-base uppercase font-secondary font-semibold'>Subscribe to our newsletter</label>
       <div className='flex justify-between items-center border-b py-1 md:py-3 mt-2 md:mt-0'>
         <input id="subscribe-email" type="text" className='w-4/5 text-lg md:text-6xl uppercase font-primary font-bold outline-none' placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />

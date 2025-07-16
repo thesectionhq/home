@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Manifesto() {
   return (
-    <div className='container mx-auto  w-full  mt-20'>
+    <div className='container mx-auto  w-full mt-20 mb-10'>
       <div className='flex flex-col md:w-[50%] w-full gap-5 h-full px-4 md:px-8'>
         <div>
           <h1 className='md:text-[40px] text-[30px] leading-[35px] md:leading-[45px] font-secondary font-bold pt-10 pb-0'>African Creativity: You&apos;re Already Behind.</h1>

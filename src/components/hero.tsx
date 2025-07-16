@@ -13,7 +13,6 @@ export default function Hero() {
         <h1 data-cursor="hover" className='md:text-[80px] text-[40px] text-center font-HelveticaBold text-[#333] leading-[40px] md:leading-[80px] uppercase tracking-tighter md:py-10 py-5 mb-5'>Section Studio</h1>
       </div>
 
-
       {articles.map((article: any, index) => (
         <div className={`${index % 2 === 0 ? 'md:flex-row rounded-l-md' : 'md:flex-row-reverse rounded-r-md'} w-full h-[90vh] bg-gray flex items-center justify-between gap-5 bg-gray-100 mb-5`}>
           <Link

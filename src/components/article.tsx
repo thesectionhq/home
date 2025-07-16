@@ -1,23 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import Image from "next/image";
-import { Metadata } from "next";
-import Link from "next/link";
 import markdownit from "markdown-it";
 import LogoAnimation from "./logo-animation";
 
-// export const metadata: Metadata = {
-//   title: "SECTION STUDIO | Music • Art • Fashion • Film • Travel | Where The Culture Cuts Deep!",
-//   description: "We celebrate African creativity at the intersection of Music, Art, Fashion, Film, and Travel Culture",
-// };
-
-export default function Article({ data: pathData }: any) {
-  const [article, setArticle] = useState<any>(null);
+export default function Article({ article }: any) {
   const [loading, setLoading] = useState(true);
-  // const allArticles: any = [];
-
-  // if (!article) return notFound();
 
   const md = markdownit({
     html: true,
@@ -25,32 +13,14 @@ export default function Article({ data: pathData }: any) {
     typographer: true
   })
 
-  useEffect(() => {
-    async function handleFetchArticle() {
-      try {
-        setLoading(true);
-        const response = await axios.get(`/api/content/articles?slug=${pathData?.slug}`);
-        setLoading(false);
-        const { data } = response.data;
-        if (data?.length > 0) {
-          setArticle(data[0]);
-        }
-      } catch (err) {
-        setLoading(false);
-      }
-    };
-
-    handleFetchArticle();
-  }, []);
-
-  if (loading) {
-    return <LogoAnimation />;
-  }
+  // if (loading) {
+  //   return <LogoAnimation />;
+  // }
 
   return (
     <>
       {/* <div className="hidden fixed z-10 left-0 top-1/2 rotate-[-90deg] font-secondary font-medium text-sm text-gray-3 mt-10 md:flex items-center "><p className="mr-2">POWERED BY</p> <Image src={require("@/assets/sycamore.png")} quality={100} className="grayscale" width={120} alt="" /></div> */}
-      <article className="container relative mx-auto flex flex-col items-center w-full px-4 py-8 mt-15">
+      <article className="container relative mx-auto flex flex-col items-center w-full px-4 py-8 mt-15 mb-10">
         <div className="flex flex-col justify-between w-full pt-4 h-full">
           <div className="md:px-40 text-center">
             <h1 className="md:text-4xl text-xl text-center font-secondary font-bold uppercase leading-[25px] md:leading-[40px] pt-5">

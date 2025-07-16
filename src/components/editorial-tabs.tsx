@@ -1,12 +1,34 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import MasonryGrid from "@/components/MasonryGrid";
 import Link from "next/link";
 import { GlobalContext } from "@/lib/context";
 
 export default function EditorialTabs() {
+  const [columns, setColumns] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(3);
   const { topicArticles } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const updateColumns = () => {
+      if (window.innerWidth < 640) {
+        setColumns(1);
+        setVisibleCount(1);
+      } else if (window.innerWidth < 1024) {
+        setColumns(2);
+        setVisibleCount(6);
+      } else {
+        setColumns(3);
+        setVisibleCount(6);
+      }
+    };
+
+
+    updateColumns(); // Call initially
+    window.addEventListener("resize", updateColumns);
+    return () => window.removeEventListener("resize", updateColumns);
+  }, []);
 
   return (
     <div className="w-full">
@@ -16,11 +38,11 @@ export default function EditorialTabs() {
       </div>
 
       <div
-        className="w-full transition-colors duration-500 bg-[#AC95FF]"
+        className="w-full transition-colors duration-500 bg-[#777]"
       >
         <div className="container mx-auto px-6 py-6">
-          <MasonryGrid columns={3} className="p-6 rounded-xl transition-colors duration-500">
-            {topicArticles.map((article: any, index) => (
+          <MasonryGrid columns={columns} className="p-6 rounded-xl transition-colors duration-500">
+            {topicArticles.slice(0, visibleCount).map((article: any, index) => (
               <Link key={index} href={`/${article?.category}/${article.slug}`} className="group">
                 <div
                   className="break-inside-avoid bg-white p-1 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 mb-6"
@@ -33,7 +55,7 @@ export default function EditorialTabs() {
                     className="w-full h-full object-cover rounded-md mb-4"
                     style={{ objectFit: "cover" }}
                   />
-                  <div className="flex flex-col items-start gap-3 mt-3 px-4">
+                  <div className="flex flex-col items-start gap-3 mt-2 mb-2 px-4">
                     <p className="text-[16px] leading-[20px] font-secondary font-semibold uppercase">{article.title}</p>
                   </div>
                 </div>
