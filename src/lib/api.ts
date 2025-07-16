@@ -27,3 +27,26 @@ export const sectionServiceClient = async (requestConfig: RequestConfigType) => 
     },
   })(requestConfig);
 };
+
+export const getArticles = async (slugArray: string[]) => {
+  let articleUrl = `${process.env.API_URL}articles?populate=*&sort[0]=live_date:desc`;
+  if (slugArray?.length > 1) {
+    articleUrl += `&filters[slug][$eq]=${slugArray[1]}`;
+  } else {
+    articleUrl += `&filters[category][$eq]=${slugArray[0]}`;
+  }
+  const response = await fetch(articleUrl, {
+    method: "get",
+    headers: {
+      Authorization: `Bearer ${process.env.API_KEY}`,
+    },
+    next: {
+      revalidate: 60,
+    },
+  });
+  if (!response.ok) {
+    throw new Error('Data fetch failed');
+  }
+
+  return response.json();
+};
