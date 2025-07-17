@@ -19,11 +19,11 @@ export default function SingleArticle({ article, index }: any) {
           <p className='font-secondary text-xs font-semibold border-b pb-[2px] w-fit'>KEEP READING</p>
         </div>
         <div className='w-full h-full block md:hidden relative'>
-          <Image src={article.cover?.url} alt="hero-image" fill quality={100} className=" w-full h-full object-contain rounded-t-sm" />
+          <Image src={article.cover?.url} alt={article?.title} fill quality={100} className=" w-full h-full object-contain rounded-t-sm" />
         </div>
       </Link>
       <div className='w-1/2 h-full hidden md:block relative'>
-        <Image src={article.cover?.url} alt="hero-image" fill quality={100} className={`${index % 2 === 0 ? 'rounded-r-md' : 'rounded-l-md'} w-full h-full object-contain shadow-lg`} />
+        <Image src={article.cover?.url} alt={article?.title} fill quality={100} className={`${index % 2 === 0 ? 'rounded-r-md' : 'rounded-l-md'} w-full h-full object-contain shadow-lg`} />
       </div>
     </div>
   );
