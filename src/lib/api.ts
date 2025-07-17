@@ -29,7 +29,7 @@ export const sectionServiceClient = async (requestConfig: RequestConfigType) => 
 };
 
 export const getArticles = async (slugArray: string[]) => {
-  let articleUrl = `${process.env.API_URL}articles?populate=*&sort[0]=live_date:desc`;
+  let articleUrl = `${process.env.API_URL}articles?populate=*&sort[0]=live_date:desc&filters[live_status][$eq]=active`;
   if (slugArray?.length > 1) {
     articleUrl += `&filters[slug][$eq]=${slugArray[1]}`;
   } else {

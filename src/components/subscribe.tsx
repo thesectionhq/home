@@ -36,7 +36,7 @@ export default function Subscribe() {
           SUBSCRIBE
         </button>
       </div>
-      <button disabled={!formReady} onClick={() => handleSubscribe()} className='md:hidden block bg-white py-2 md:py-3 px-3 md:px-5 rounded shadow-md text-sm md:text-base mt-2 font-primary'>
+      <button disabled={!formReady} onClick={() => handleSubscribe()} className='disabled:bg-gray-200 disabled:text-gray-400 md:hidden block bg-white py-2 md:py-3 px-3 md:px-5 rounded shadow-md text-sm md:text-base mt-2 font-primary'>
         SUBSCRIBE
       </button>
     </div>
