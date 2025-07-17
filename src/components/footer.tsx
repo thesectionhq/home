@@ -35,7 +35,7 @@ export default function Footer() {
       </div>
       <footer className="bg-white h-[5vh] md:px-20 px-5 flex items-center justify-between font-secondary font-semibold">
         <p className="md:text-base text-xs">Section Studio.</p>
-        <p>developed by penuel</p>
+        <p className="md:text-base text-xs">developed by penuel</p>
         <a href="mailto:hello@thesectionhq.com" className="md:text-base text-xs">hello@thesectionhq.com</a>
       </footer>
     </div>

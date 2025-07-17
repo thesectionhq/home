@@ -19,8 +19,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    images: ['/asset/logo-bg.png']
-  }
+    images: ['/asset/logo-bg.png'],
+  },
+  twitter: {
+    creator: '@thesectionhq',
+    creatorId: '1813659278718242816',
+    images: ['/asset/logo-bg.png'],
+  },
 };
 
 export default function RootLayout({

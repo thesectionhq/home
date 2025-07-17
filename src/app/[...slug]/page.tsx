@@ -24,8 +24,16 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       title: `SECTION STUDIO | ${response?.data[0]?.title}`,
       description: response?.data[0]?.excerpt,
       openGraph: {
-        images: [response?.data[0]?.cover?.url],
-      }
+        images: [{
+          url: response?.data[0]?.cover?.url,
+          width: 1200,
+          height: 1500,
+        }],
+      },
+      twitter: {
+        creator: '@thesectionhq',
+        creatorId: '1813659278718242816',
+      },
     };
   } else {
     return {
